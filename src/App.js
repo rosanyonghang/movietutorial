@@ -1,23 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
-
-function App() {
+import './App.scss';
+import {HomeLayout} from "./layouts/HomeLayout";
+import {Route, Routes} from "react-router";
+import {AuthLayout} from "./layouts/AuthLayout";
+const App= ()=> {
+    const routes = [
+        {path:'', element: <AuthLayout/>},
+        {path:'home', element: <HomeLayout/>},
+        {path:'*', element: <AuthLayout/>},
+    ]
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Routes>
+          {routes.map((v,key)=>(
+              <Route  path={v.path} element={v.element} key={key}/>
+          ))}
+      </Routes>
     </div>
   );
 }
