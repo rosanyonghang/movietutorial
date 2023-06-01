@@ -1,0 +1,83 @@
+body{
+    margin:0;
+    box-sizing: border-box;
+    font-size:16px;
+    font-family: 'Wix Madefor Display', sans-serif;
+}
+
+.logo{
+    font-size:1.6rem;
+    font-weight: ;
+}
+nav{
+    height:80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding:0 8vw;
+    border-bottom: 1px gray solid;
+}
+
+.nav-items{
+    display:flex;
+    /* width:600px; */
+    justify-content: space-around;
+}
+
+.nav-item{
+    padding: 8px 16px;
+    border-radius:4px;
+    transition: .3s;
+    cursor: pointer;
+}
+
+.nav-item:hover{
+    background:teal;
+    color:white;
+}
+
+section {
+    height: calc(100vh - 80px);
+    display: flex;
+    background: url("https://images.unsplash.com/photo-1609688669309-fc15db557633?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8d2hpdGUlMjBtb3VudGFpbnxlbnwwfHwwfHw%3D&w=1000&q=80");
+    background-size:cover;
+}
+
+.text-area,.image-area{
+    width:50%;
+    height:100%;
+}
+
+.text-area{
+    display: flex;
+    padding-top:10vh;
+    /* justify-content: center; */
+    flex-direction: column;
+    padding-left:8vw;
+    padding-right:4vw;
+}
+
+.image-area img{
+    height: 100%;
+    object-fit:cover;
+    object-position: center;
+    width: 100%;
+}
+
+.title{
+    font-size:84px;
+    font-weight: bold;
+    font-family: 'Mogra', cursive;
+}
+
+.sub-title{
+    font-size:48px;
+}
+
+button{
+    padding:8px 16px;
+    border-radius: 4px;
+    background:teal;
+    color:white;
+    border: none;
+}
