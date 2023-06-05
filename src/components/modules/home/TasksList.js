@@ -1,7 +1,13 @@
 import {TaskCard} from "./TaskCard";
 
 export const TasksList = () => {
+    const getTaskValue = (title)=>{
+        alert(title)
+    }
 
+    const getTaskValue2 = (title)=>{
+        alert(title);
+    }
     const tasks = [
         {id: '1', title: "Task 1", status: 'todo', description: "description 1"},
         {id: '2', title: "Task 2", status: 'todo', description: "description 2"},
@@ -20,8 +26,12 @@ export const TasksList = () => {
         <h2>Tasks List</h2>
         <div className="tasks">
             {tasks.map((cardData, key) => (
-                <TaskCard key={key} data={cardData}/>
+                <TaskCard key={key} data={cardData} triggerAlert={getTaskValue} getTaskValue2={()=>getTaskValue2(cardData.title)} random={"hehehe"}>
+                    <h1>children</h1>
+                </TaskCard>
             ))}
+
+
         </div>
     </div>
 }
