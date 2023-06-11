@@ -1,4 +1,5 @@
 import {useState} from "react";
+import {useNavigate} from "react-router";
 
 export const AddTaskForm = (props) => {
     const [showDialog, setShowDialog] = useState(false);
@@ -8,6 +9,7 @@ export const AddTaskForm = (props) => {
 
     const [formValues, setFormValues] = useState({title: '', description: ''})
 
+    const navigate = useNavigate();
     // const addTaskHandler = (e) => {
     //     e.preventDefault();
     //     props.addTask({
@@ -34,7 +36,7 @@ export const AddTaskForm = (props) => {
         })
     }
     return <section>
-        <h1>{formValues.title}</h1>
+        <h1> <button onClick={()=>navigate(-1)}>back</button>  Add Task</h1>
         {/*conditional*/}
         {/*add task*/}
         {/*<button onClick={() => setShowDialog(!showDialog)}>Show add Task dialog</button>*/}
