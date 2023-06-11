@@ -1,5 +1,6 @@
 import {useState, useEffect} from "react";
 import {useLocation, useNavigate} from "react-router";
+import {Link} from "react-router-dom";
 
 export const AuthLayout = () => {
     let [count, setCount] = useState(0);
@@ -35,6 +36,8 @@ export const AuthLayout = () => {
             <input type="text" name={"password"} onChange={formHandler} value={creds.password}
                    placeholder={"enter password"}/>
             <button type={"submit"}>Login</button>
+            <button onClick={()=> navigate('/randomness')}>Jus go dynamic</button>
+            <Link to={'/randomness2'}>Randomness2</Link>
         </form>
     </div>
 }
