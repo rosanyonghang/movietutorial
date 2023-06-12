@@ -29,6 +29,12 @@ export const AuthLayout = () => {
             alert('Wrong creds')
         }
     }
+
+    const temp = {
+        title:'test',
+        status:'next'
+    }
+
     return <div>
         <form onSubmit={loginUser}>
             <input type="text" name={"username"} onChange={formHandler} value={creds.username}
@@ -36,8 +42,8 @@ export const AuthLayout = () => {
             <input type="text" name={"password"} onChange={formHandler} value={creds.password}
                    placeholder={"enter password"}/>
             <button type={"submit"}>Login</button>
-            <button onClick={()=> navigate('/randomness')}>Jus go dynamic</button>
-            <Link to={'/randomness2'}>Randomness2</Link>
+            <button onClick={()=> navigate('/dynamo/randomness')}>Jus go dynamic</button>
+            <Link to={'/dynamo/randomness2'}>Randomness2</Link>
         </form>
     </div>
 }
