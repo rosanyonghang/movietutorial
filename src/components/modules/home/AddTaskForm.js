@@ -2,39 +2,17 @@ import {useState} from "react";
 import {useNavigate} from "react-router";
 
 export const AddTaskForm = (props) => {
-    const [showDialog, setShowDialog] = useState(false);
-
-    const [formValues, setFormValues] = useState({title: '', description: ''})
-
-    const navigate = useNavigate();
-
-    const formHandler = (e) => {
-        const formTemp = {
-            ...formValues,
-            [e.target.name]: e.target.value
-        }
-        setFormValues(formTemp);
-    }
-    const addTaskHandler = (e) => {
-        e.preventDefault();
-        props.addTask({
-            ...formValues,
-            id: (new Date()).toString(),
-            status: 'todo'
-        })
-    }
     return <section>
-        <h1> <button onClick={()=>navigate(-1)}>back</button>  Add Task</h1>
-        <form onSubmit={addTaskHandler}>
+        <form onSubmit={props.addTaskHandler}>
             <input type="text" name={"title"}
-                   value={formValues.title}
+                   value={props.formValues.title}
                    placeholder={"Enter task name"}
-                   onChange={formHandler}/>
+                   onChange={props.formHandler}/>
 
             <input type="text"
-                   value={formValues.description}
+                   value={props.formValues.description}
                    name={"description"} placeholder={"Enter task description"}
-                   onChange={formHandler}
+                   onChange={props.formHandler}
             />
             <button type={"submit"}>Add task</button>
         </form>
